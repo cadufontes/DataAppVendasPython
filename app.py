@@ -31,8 +31,12 @@ lucro_mes_categoria = df.groupby(["mes_ano", "Categoria"])["Lucro"].sum().reset_
 st.markdown(
     """
     <style>
+    [data-testid="stMetricLabel"] {
+        color: #fff;
+    }
     [data-testid="stMetricValue"] {
         font-size: 26px;
+        color: #fff;
     }
     [data-testid="metric-container"] {
         background-color: #333;
