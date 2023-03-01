@@ -60,15 +60,13 @@ def main():
     with col3:
         st.metric(label="Total de Clientes", value=df['ID Cliente'].nunique())
 
-    col1, col2 = st.columns(2)
-
     fig = px.bar(produtos_vendidos_marca, x='Quantidade', y='Marca', orientation='h', text='Quantidade', 
             width=380, height=400, title='Total de Produtos Vendidos por Marca')
-    col1.plotly_chart(fig)
+    st.plotly_chart(fig)
 
-    fig1 = px.pie(lucro_categoria, values='Lucro', names='Categoria', width=380, height=400, 
+    fig1 = px.pie(lucro_categoria, values='Lucro', names='Categoria', width=900, height=400, 
                  title='Total de Lucro por Categoria')
-    col2.plotly_chart(fig1)
+    st.plotly_chart(fig1)
 
     fig2 = px.line(lucro_mes_categoria, x='mes_ano', y='Lucro', width=900, height=400, 
                  title='Lucro X Mês X Categoria', markers=True, color="Categoria", 
